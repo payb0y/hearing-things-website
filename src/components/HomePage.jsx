@@ -353,7 +353,7 @@ const HomePage = () => {
                </Typography>
              </Stack>
              <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-               <IconButton
+               {/* <IconButton
                  onClick={toggleTheme}
                  sx={{
                    color: currentTheme.primaryText,
@@ -363,13 +363,14 @@ const HomePage = () => {
                  }}
                >
                  {isDarkMode ? <LightMode /> : <DarkMode />}
-               </IconButton>
+               </IconButton> */}
                <Button
                  variant="contained"
                  sx={{
                    backgroundColor: currentTheme.accent,
                    borderRadius: "8px",
                    textTransform: "none",
+                   marginLeft: "10px",
                    px: 3,
                    "&:hover": {
                      backgroundColor: currentTheme.accentHover
