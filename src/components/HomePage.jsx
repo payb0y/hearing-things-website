@@ -385,23 +385,39 @@ const HomePage = () => {
 
       {/* Hero Section */}
       <Container maxWidth="lg" sx={{ py: { xs: 6, md: 10 } }}>
-        <Box sx={{ textAlign: "center", mb: 8 }}>
-                     <Typography
-             variant="h1"
-             sx={{
-               fontSize: { xs: "2.5rem", md: "4rem" },
-               fontWeight: 700,
-               color: currentTheme.primaryText,
-               lineHeight: 1.1,
-               mb: 3,
-               letterSpacing: "-2px"
-             }}
-           >
-             The Future of
-             <Box component="span" sx={{ color: currentTheme.accent, display: "block" }}>
-               Audio Finance
-             </Box>
-           </Typography>
+                 <Box sx={{ textAlign: "center", mb: 8 }}>
+           <Box sx={{ 
+             display: "flex", 
+             alignItems: "center", 
+             justifyContent: "center", 
+             gap: { xs: 2, md: 3 }, 
+             mb: 3,
+             flexDirection: { xs: "column", sm: "row" }
+           }}>
+             <img 
+               src={logo} 
+               alt="Hearing Things Logo" 
+               style={{ 
+                 height: "80px", 
+                 width: "80px", 
+                 objectFit: "contain"
+               }} 
+             />
+             <Typography
+               variant="h1"
+               sx={{
+                 fontSize: { xs: "2.5rem", md: "4rem" },
+                 fontWeight: 700,
+                 color: currentTheme.primaryText,
+                 lineHeight: 1.1,
+                 letterSpacing: "-2px"
+               }}
+             >
+               <Box component="span" sx={{ color: currentTheme.accent }}>
+                 Hearing Things
+               </Box>
+             </Typography>
+           </Box>
            <Typography
              variant="h5"
              sx={{
@@ -417,6 +433,46 @@ const HomePage = () => {
             Revolutionary memecoin that transforms auditory experiences into digital assets. 
             Join thousands of holders in the next generation of cryptocurrency.
           </Typography>
+          
+          {/* Contract Address */}
+          <Paper
+            elevation={0}
+            onClick={() => {
+              const ca = "0x1234567890AbCdEf1234567890AbCdEf12345678";
+              navigator.clipboard.writeText(ca);
+              // You can add a toast notification here if desired
+            }}
+            sx={{
+              p: 2,
+              backgroundColor: currentTheme.twitterHover,
+              border: `1px solid ${currentTheme.border}`,
+              borderRadius: 2,
+              cursor: "pointer",
+              maxWidth: "500px",
+              mx: "auto",
+              mb: 4,
+              "&:hover": {
+                backgroundColor: currentTheme.paper,
+                borderColor: currentTheme.accent
+              }
+            }}
+          >
+            <Typography variant="body2" sx={{ color: currentTheme.secondaryText, mb: 0.5, fontSize: "0.85rem" }}>
+              Contract Address
+            </Typography>
+            <Typography 
+              variant="body1" 
+              sx={{ 
+                color: currentTheme.primaryText, 
+                fontFamily: "monospace",
+                fontSize: "0.95rem",
+                wordBreak: "break-all"
+              }}
+            >
+              0x1234567890AbCdEf1234567890AbCdEf12345678
+            </Typography>
+          </Paper>
+
           <Stack
             direction={{ xs: "column", sm: "row" }}
             spacing={2}
