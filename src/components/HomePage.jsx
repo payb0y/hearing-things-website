@@ -623,89 +623,146 @@ const HomePage = () => {
 
                      <Divider sx={{ my: 2, borderColor: "black" }} />
 
-           {/* Feature Stories with All Media - Dense Layout */}
+           {/* Feature Stories with All Media - Horizontal Layout */}
            <Grid container spacing={{ xs: 1, md: 2 }} sx={{ mb: { xs: 2, md: 3 } }}>
-             {featureStories.map((story, index) => (
-               <Grid item xs={12} md={6} lg={4} key={index}>
+             {featureStories.reduce((pairs, story, index) => {
+               if (index % 2 === 0) {
+                 pairs.push([story, featureStories[index + 1]].filter(Boolean));
+               }
+               return pairs;
+             }, []).map((storyPair, pairIndex) => (
+               <Grid item xs={12} md={6} key={pairIndex}>
                  <Box sx={{ 
-                   border: "1px solid #ccc",
+                   border: "2px solid black",
                    backgroundColor: "white",
                    height: "100%",
                    display: "flex",
                    flexDirection: "column"
                  }}>
-                   {/* Media */}
-                   <Box sx={{ position: "relative" }}>
-                     {story.media.type === "video" ? (
-                       <Box>
-                         <video
-                           controls
-                           style={{
-                             width: "100%",
-                             height: "150px",
-                             objectFit: "cover",
-                           }}
-                           preload="metadata"
-                         >
-                           <source src={story.media.src} />
-                         </video>
-                         <Typography
-                           variant="caption"
-                           sx={{
-                             position: "absolute",
-                             top: 4,
-                             right: 4,
-                             backgroundColor: "rgba(0,0,0,0.8)",
-                             color: "white",
-                             px: 0.5,
-                             py: 0.25,
-                             fontSize: "0.6rem",
-                           }}
-                         >
-                           VIDEO
-                         </Typography>
-                       </Box>
-                     ) : (
-                       <Box
-                         component="img"
-                         src={story.media.src}
-                         sx={{
-                           width: "100%",
-                           height: "150px",
-                           objectFit: "cover",
-                         }}
-                       />
-                     )}
-                   </Box>
+                   {/* Header for the pair */}
+                   <Typography
+                     variant="h6"
+                     sx={{
+                       fontSize: { xs: "0.9rem", md: "1rem" },
+                       fontWeight: "bold",
+                       fontFamily: "serif",
+                       color: "white",
+                       backgroundColor: "black",
+                       textAlign: "center",
+                       py: 0.5,
+                       mb: 0
+                     }}
+                   >
+                     MULTIMEDIA SPOTLIGHT #{pairIndex + 1}
+                   </Typography>
                    
-                   {/* Content */}
-                   <Box sx={{ p: { xs: 1, md: 1.5 }, flex: 1 }}>
-                     <Typography
-                       variant="h6"
-                       sx={{
-                         fontSize: { xs: "0.85rem", md: "0.95rem" },
-                         fontWeight: "bold",
-                         fontFamily: "serif",
-                         color: "black",
-                         mb: 0.5,
-                         lineHeight: 1.2,
-                       }}
-                     >
-                       {story.headline}
-                     </Typography>
-                     
-                     <Typography
-                       variant="body2"
-                       sx={{
-                         fontFamily: "serif",
-                         lineHeight: 1.4,
-                         color: "black",
-                         textAlign: "justify",
-                         fontSize: { xs: "0.75rem", md: "0.8rem" },
-                       }}
-                     >
-                       {story.content}
-                     </Typography>
+                   {/* Stories - Each story in horizontal layout */}
+                   <Box sx={{ flex: 1 }}>
+                     {storyPair.map((story, storyIndex) => (
+                       <Box key={storyIndex} sx={{ 
+                         display: "flex",
+                         borderBottom: storyIndex < storyPair.length - 1 ? "1px solid #ccc" : "none",
+                         minHeight: "120px"
+                       }}>
+                         {/* Content Section - Left Side */}
+                         <Box sx={{ 
+                           flex: 1, 
+                           p: { xs: 1, md: 1.5 },
+                           display: "flex",
+                           flexDirection: "column",
+                           justifyContent: "center"
+                         }}>
+                           <Typography
+                             variant="h6"
+                             sx={{
+                               fontSize: { xs: "0.8rem", md: "0.9rem" },
+                               fontWeight: "bold",
+                               fontFamily: "serif",
+                               color: "black",
+                               mb: 0.5,
+                               lineHeight: 1.2,
+                             }}
+                           >
+                             {story.headline}
+                           </Typography>
+                           
+                           <Typography
+                             variant="body2"
+                             sx={{
+                               fontFamily: "serif",
+                               lineHeight: 1.4,
+                               color: "black",
+                               textAlign: "justify",
+                               fontSize: { xs: "0.7rem", md: "0.75rem" },
+                             }}
+                           >
+                             {story.content}
+                           </Typography>
+                         </Box>
+                         
+                         {/* Media Section - Right Side */}
+                         <Box sx={{ 
+                           width: { xs: "140px", md: "180px" },
+                           display: "flex",
+                           alignItems: "center",
+                           justifyContent: "center",
+                           p: 1,
+                           borderLeft: "1px solid #ccc"
+                         }}>
+                           {story.media.type === "video" ? (
+                             <Box sx={{ 
+                               position: "relative", 
+                               width: "100%",
+                               aspectRatio: "1/1"
+                             }}>
+                               <video
+                                 controls
+                                 style={{
+                                   width: "100%",
+                                   height: "100%",
+                                   objectFit: "cover",
+                                   backgroundColor: "#000"
+                                 }}
+                                 preload="metadata"
+                               >
+                                 <source src={story.media.src} />
+                               </video>
+                               <Typography
+                                 variant="caption"
+                                 sx={{
+                                   position: "absolute",
+                                   top: 2,
+                                   right: 2,
+                                   backgroundColor: "rgba(0,0,0,0.8)",
+                                   color: "white",
+                                   px: 0.5,
+                                   py: 0.25,
+                                   fontSize: "0.5rem",
+                                 }}
+                               >
+                                 VIDEO
+                               </Typography>
+                             </Box>
+                           ) : (
+                             <Box sx={{ 
+                               position: "relative", 
+                               width: "100%",
+                               aspectRatio: "1/1"
+                             }}>
+                               <Box
+                                 component="img"
+                                 src={story.media.src}
+                                 sx={{
+                                   width: "100%",
+                                   height: "100%",
+                                   objectFit: "cover",
+                                 }}
+                               />
+                             </Box>
+                           )}
+                         </Box>
+                       </Box>
+                     ))}
                    </Box>
                  </Box>
                </Grid>
