@@ -13,6 +13,7 @@ import {
 // Import assets
 import logo from "../assets/logo.png";
 import image from "../assets/image.png";
+import image4 from "../assets/image4.jpg";
 import imageWebp from "../assets/image.webp";
 import video1 from "../assets/video1.mp4";
 import video2 from "../assets/video2.mov";
@@ -181,10 +182,10 @@ const HomePage = () => {
                flexWrap: "wrap"
              }}>
                {sections.map((section, index) => (
-                 <Typography 
+          <Typography
                    key={index}
                    variant="caption" 
-                   sx={{ 
+            sx={{
                      fontFamily: "serif", 
                      fontSize: { xs: "0.7rem", md: "0.8rem" },
                      borderRight: index < sections.length - 1 ? "1px solid #ccc" : "none",
@@ -192,9 +193,9 @@ const HomePage = () => {
                    }}
                  >
                    {section}
-                 </Typography>
-               ))}
-             </Box>
+          </Typography>
+              ))}
+            </Box>
              <Typography variant="caption" sx={{ 
                fontFamily: "serif", 
                fontSize: { xs: "0.7rem", md: "0.8rem" }
@@ -222,11 +223,11 @@ const HomePage = () => {
                    objectFit: "contain"
                  }} 
                />
-               <Typography
-                 variant="h1"
-                 sx={{
+          <Typography
+            variant="h1"
+            sx={{
                    fontSize: { xs: "1.5rem", sm: "2.5rem", md: "3.5rem" },
-                   fontWeight: "bold",
+              fontWeight: "bold",
                    fontFamily: "serif",
                    color: "black",
                    textTransform: "uppercase",
@@ -235,11 +236,11 @@ const HomePage = () => {
                  }}
                >
                  THE HEARING TIMES
-               </Typography>
+          </Typography>
              </Box>
-             <Typography 
+          <Typography
                variant="subtitle1" 
-               sx={{ 
+            sx={{
                  fontStyle: "italic", 
                  color: "gray",
                  fontFamily: "serif",
@@ -250,7 +251,7 @@ const HomePage = () => {
                }}
              >
                "All the Noise That's Fit to Print" • EST. 2024
-             </Typography>
+          </Typography>
            </Box>
          </Container>
        </Box>
@@ -277,9 +278,9 @@ const HomePage = () => {
                  {breakingNews.join(" • ")}
                </Typography>
              </Box>
-           </Box>
-         </Container>
-       </Box>
+          </Box>
+        </Container>
+      </Box>
 
        {/* Main Newspaper Content */}
        <Container maxWidth="lg" sx={{ py: { xs: 2, md: 4 } }}>
@@ -291,26 +292,26 @@ const HomePage = () => {
            
            {/* Lead Story */}
            <Box sx={{ mb: { xs: 2, md: 3 }, pb: { xs: 2, md: 3 }, borderBottom: "2px solid black" }}>
-             <Typography
-               variant="h2"
-               sx={{
+          <Typography
+            variant="h2"
+            sx={{
                  fontSize: { xs: "1.2rem", sm: "1.6rem", md: "2.2rem", lg: "2.5rem" },
-                 fontWeight: "bold",
+              fontWeight: "bold",
                  fontFamily: "serif",
                  color: "black",
                  lineHeight: { xs: 1.2, md: 1.1 },
                  mb: 1,
-                 textAlign: "center",
+              textAlign: "center",
                  textTransform: "uppercase",
                  px: { xs: 1, md: 0 }
                }}
              >
                {mainStory.headline}
-             </Typography>
-             
+          </Typography>
+
              <Typography
                variant="h5"
-               sx={{
+            sx={{
                  fontSize: { xs: "0.9rem", sm: "1rem", md: "1.2rem" },
                  fontFamily: "serif",
                  color: "black",
@@ -323,11 +324,11 @@ const HomePage = () => {
                {mainStory.subheadline}
              </Typography>
 
-             <Typography
+            <Typography
                variant="caption"
-               sx={{
+              sx={{
                  display: "block",
-                 textAlign: "center",
+                textAlign: "center",
                  mb: { xs: 2, md: 3 },
                  color: "gray",
                  fontSize: { xs: "0.8rem", md: "0.9rem" },
@@ -339,8 +340,8 @@ const HomePage = () => {
                {mainStory.byline} • Special Investigation
              </Typography>
 
-             <Grid container spacing={{ xs: 2, md: 3 }}>
-               <Grid item xs={12} md={6}>
+                          <Grid container spacing={{ xs: 2, md: 3 }}>
+               <Grid item xs={12} md={4}>
                  <Typography
                    variant="body1"
                    sx={{
@@ -350,50 +351,15 @@ const HomePage = () => {
                      color: "black",
                      textAlign: "justify",
                      textIndent: { xs: "1em", md: "2em" },
+                     columnCount: { xs: 1, md: 1 },
+                     columnGap: "1.5rem",
                    }}
                  >
                    {mainStory.content}
                  </Typography>
                </Grid>
                
-               <Grid item xs={12} md={3}>
-                 {/* Market Data Box */}
-                 <Box sx={{ 
-                   border: "2px solid black", 
-                   p: { xs: 1, md: 1.5 }, 
-                   backgroundColor: "#f0f0f0",
-                   mb: 2
-                 }}>
-                   <Typography variant="h6" sx={{ 
-                     fontFamily: "serif", 
-                     fontWeight: "bold", 
-                     mb: 1,
-                     fontSize: { xs: "0.9rem", md: "1rem" },
-                     textAlign: "center"
-                   }}>
-                     LIVE MARKET DATA
-                   </Typography>
-                   {marketData.map((item, index) => (
-                     <Box key={index} sx={{ display: "flex", justifyContent: "space-between", mb: 0.5 }}>
-                       <Typography variant="caption" sx={{ fontFamily: "serif", fontSize: "0.7rem" }}>
-                         {item.label}:
-                       </Typography>
-                       <Box>
-                         <Typography variant="caption" sx={{ fontFamily: "monospace", fontSize: "0.7rem", fontWeight: "bold" }}>
-                           {item.value}
-                         </Typography>
-                         <Typography variant="caption" sx={{ 
-                           ml: 0.5, 
-                           color: item.change.startsWith('+') ? 'green' : 'red',
-                           fontSize: "0.6rem"
-                         }}>
-                           {item.change}
-                         </Typography>
-                       </Box>
-                     </Box>
-                   ))}
-                 </Box>
-                 
+               <Grid item xs={12} md={2.5}>
                  {/* Crypto Weather */}
                  <Box sx={{ 
                    border: "1px solid #ccc", 
@@ -427,9 +393,7 @@ const HomePage = () => {
                      {cryptoWeather.condition}
                    </Typography>
                  </Box>
-               </Grid>
-               
-               <Grid item xs={12} md={3}>
+                 
                  {/* Quick News */}
                  <Box sx={{ 
                    border: "1px solid black", 
@@ -467,13 +431,132 @@ const HomePage = () => {
                    ))}
                  </Box>
                </Grid>
+               
+               <Grid item xs={12} md={5.5}>
+                 {/* Image and Big Text Section Combined */}
+                 <Grid container spacing={2} sx={{ height: "100%" }}>
+                   <Grid item xs={12} md={5}>
+                     {/* Image Section */}
+                     <Box sx={{ 
+                       border: "2px solid black", 
+                       backgroundColor: "white",
+                       height: "100%"
+                     }}>
+                       <Typography variant="h6" sx={{ 
+                         fontFamily: "serif", 
+                         fontWeight: "bold", 
+                         fontSize: { xs: "0.8rem", md: "0.9rem" },
+                         textAlign: "center",
+                         backgroundColor: "black",
+                         color: "white",
+                         py: 0.5,
+                         mb: 0
+                       }}>
+                         FEATURED IMAGE
+                       </Typography>
+                       <Box sx={{ p: 1, textAlign: "center" }}>
+                         <Box
+                           component="img"
+                           src={image4}
+                           alt="Community Artwork"
+                           sx={{
+                             width: "100%",
+                             height: "auto",
+                             maxHeight: "400px",
+                             objectFit: "contain",
+                             border: "1px solid #ccc",
+                             mb: 1
+                           }}
+                         />
+                         <Typography variant="caption" sx={{ 
+                           fontFamily: "serif",
+                           fontSize: "0.7rem",
+                           fontStyle: "italic",
+                           color: "gray",
+                           display: "block",
+                           textAlign: "center"
+                         }}>
+                           Community artwork showcasing the Hearing Things spirit
+                         </Typography>
+                       </Box>
+                     </Box>
+                   </Grid>
+                   
+                   <Grid item xs={12} md={7}>
+                     {/* Big Text Section */}
+                     <Box sx={{ 
+                       border: "3px solid black", 
+                       backgroundColor: "#f9f9f9",
+                       height: "100%",
+                       display: "flex",
+                       flexDirection: "column",
+                       justifyContent: "flex-start",
+                       alignItems: "center",
+                       p: 2
+                     }}>
+                       <Typography variant="h3" sx={{ 
+                         fontFamily: "serif", 
+                         fontWeight: "bold", 
+                         fontSize: { xs: "1.5rem", md: "2.5rem" },
+                         textAlign: "center",
+                         color: "black",
+                         lineHeight: 1.1,
+                         mb: 1
+                       }}>
+                         HEAR THE
+                       </Typography>
+                       <Typography variant="h3" sx={{ 
+                         fontFamily: "serif", 
+                         fontWeight: "bold", 
+                         fontSize: { xs: "1.8rem", md: "3rem" },
+                         textAlign: "center",
+                         color: "#d32f2f",
+                         lineHeight: 1.1,
+                         mb: 1
+                       }}>
+                         FUTURE
+                       </Typography>
+                       <Typography variant="h6" sx={{ 
+                         fontFamily: "serif", 
+                         fontWeight: "normal", 
+                         fontSize: { xs: "0.8rem", md: "1rem" },
+                         textAlign: "center",
+                         color: "black",
+                         fontStyle: "italic",
+                         mb: 2
+                       }}>
+                         The Sound of Tomorrow
+                       </Typography>
+                       <Typography variant="body2" sx={{ 
+                         fontFamily: "serif", 
+                         fontSize: { xs: "0.7rem", md: "0.8rem" },
+                         textAlign: "justify",
+                         color: "black",
+                         lineHeight: 1.4,
+                         textIndent: "1em"
+                       }}>
+                         Revolutionary audio technology meets cryptocurrency innovation in this groundbreaking project. 
+                         The Hearing Things ecosystem represents a paradigm shift in how we experience digital sound. 
+                         Advanced algorithms process audio in real-time, creating immersive experiences never before possible. 
+                         Community-driven development ensures every voice is heard in shaping our sonic future. 
+                         Smart contracts enable seamless audio transactions and royalty distributions. 
+                         Decentralized storage protects your audio assets from censorship and loss. 
+                         Cross-platform compatibility brings the experience to every device and platform. 
+                         Join thousands of early adopters already exploring this new frontier. 
+                         Professional artists and hobbyists alike are discovering unprecedented creative possibilities. 
+                         The future of audio is here, and it sounds incredible.
+                       </Typography>
+                     </Box>
+                   </Grid>
+                 </Grid>
+               </Grid>
              </Grid>
            </Box>
 
                      {/* Secondary Stories Row */}
            <Grid container spacing={{ xs: 1, md: 2 }} sx={{ mb: { xs: 2, md: 3 } }}>
              {secondaryStories.map((story, index) => (
-               <Grid item xs={12} md={4} key={index}>
+              <Grid item xs={12} md={4} key={index}>
                  <Box sx={{ 
                    border: "1px solid #ddd",
                    p: { xs: 1, md: 1.5 },
@@ -482,7 +565,7 @@ const HomePage = () => {
                  }}>
                    <Typography
                      variant="h6"
-                     sx={{
+                  sx={{
                        fontSize: { xs: "0.9rem", md: "1rem" },
                        fontWeight: "bold",
                        fontFamily: "serif",
@@ -494,9 +577,9 @@ const HomePage = () => {
                      {story.headline}
                    </Typography>
                    
-                   <Typography
+                    <Typography
                      variant="caption"
-                     sx={{
+                      sx={{
                        display: "block",
                        mb: 1,
                        color: "gray",
@@ -505,11 +588,11 @@ const HomePage = () => {
                      }}
                    >
                      By {story.byline}
-                   </Typography>
+                    </Typography>
                    
-                   <Typography
+                    <Typography
                      variant="body2"
-                     sx={{
+                      sx={{
                        fontFamily: "serif",
                        lineHeight: 1.5,
                        color: "black",
@@ -518,11 +601,11 @@ const HomePage = () => {
                      }}
                    >
                      {story.content}
-                   </Typography>
+                    </Typography>
                  </Box>
-               </Grid>
-             ))}
-           </Grid>
+              </Grid>
+            ))}
+          </Grid>
 
            {/* Advertisement Section */}
            <Box sx={{ 
@@ -554,7 +637,7 @@ const HomePage = () => {
              }}>
                BUY NOW!
              </Button>
-           </Box>
+        </Box>
 
            {/* Sports Section */}
            <Grid container spacing={{ xs: 1, md: 2 }} sx={{ mb: { xs: 2, md: 3 } }}>
@@ -640,22 +723,22 @@ const HomePage = () => {
                    flexDirection: "column"
                  }}>
                    {/* Header for the pair */}
-                   <Typography
+          <Typography
                      variant="h6"
-                     sx={{
+            sx={{
                        fontSize: { xs: "0.9rem", md: "1rem" },
-                       fontWeight: "bold",
+              fontWeight: "bold",
                        fontFamily: "serif",
                        color: "white",
                        backgroundColor: "black",
-                       textAlign: "center",
+              textAlign: "center",
                        py: 0.5,
                        mb: 0
                      }}
                    >
                      MULTIMEDIA SPOTLIGHT #{pairIndex + 1}
-                   </Typography>
-                   
+          </Typography>
+
                    {/* Stories - Each story in horizontal layout */}
                    <Box sx={{ flex: 1 }}>
                      {storyPair.map((story, storyIndex) => (
@@ -674,7 +757,7 @@ const HomePage = () => {
                          }}>
                            <Typography
                              variant="h6"
-                             sx={{
+                  sx={{
                                fontSize: { xs: "0.8rem", md: "0.9rem" },
                                fontWeight: "bold",
                                fontFamily: "serif",
@@ -688,7 +771,7 @@ const HomePage = () => {
                            
                            <Typography
                              variant="body2"
-                             sx={{
+                      sx={{
                                fontFamily: "serif",
                                lineHeight: 1.4,
                                color: "black",
@@ -703,15 +786,15 @@ const HomePage = () => {
                          {/* Media Section - Right Side */}
                          <Box sx={{ 
                            width: { xs: "140px", md: "180px" },
-                           display: "flex",
-                           alignItems: "center",
-                           justifyContent: "center",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
                            p: 1,
                            borderLeft: "1px solid #ccc"
                          }}>
                            {story.media.type === "video" ? (
                              <Box sx={{ 
-                               position: "relative", 
+                        position: "relative",
                                width: "100%",
                                aspectRatio: "1/1"
                              }}>
@@ -727,21 +810,21 @@ const HomePage = () => {
                                >
                                  <source src={story.media.src} />
                                </video>
-                               <Typography
-                                 variant="caption"
-                                 sx={{
-                                   position: "absolute",
+                      <Typography
+                        variant="caption"
+                        sx={{
+                          position: "absolute",
                                    top: 2,
                                    right: 2,
                                    backgroundColor: "rgba(0,0,0,0.8)",
-                                   color: "white",
+                          color: "white",
                                    px: 0.5,
                                    py: 0.25,
                                    fontSize: "0.5rem",
-                                 }}
-                               >
-                                 VIDEO
-                               </Typography>
+                        }}
+                      >
+                        VIDEO
+                      </Typography>
                              </Box>
                            ) : (
                              <Box sx={{ 
@@ -750,7 +833,7 @@ const HomePage = () => {
                                aspectRatio: "1/1"
                              }}>
                                <Box
-                                 component="img"
+                      component="img"
                                  src={story.media.src}
                                  sx={{
                                    width: "100%",
@@ -765,9 +848,9 @@ const HomePage = () => {
                      ))}
                    </Box>
                  </Box>
-               </Grid>
-             ))}
-           </Grid>
+              </Grid>
+            ))}
+          </Grid>
 
            {/* More Ads and Content */}
            <Grid container spacing={{ xs: 1, md: 2 }} sx={{ mb: { xs: 2, md: 3 } }}>
@@ -799,7 +882,7 @@ const HomePage = () => {
                  }}>
                    - Anonymous Trader (Results may vary)
                  </Typography>
-               </Box>
+        </Box>
              </Grid>
              
              <Grid item xs={12} md={4}>
@@ -850,7 +933,7 @@ const HomePage = () => {
            }}>
              <Typography variant="h6" sx={{ 
                fontFamily: "serif", 
-               fontWeight: "bold", 
+              fontWeight: "bold",
                mb: 1,
                fontSize: { xs: "1rem", md: "1.1rem" }
              }}>
@@ -876,7 +959,7 @@ const HomePage = () => {
              }}>
                In a world where digital assets often lack substance, Hearing Things Coin represents something deeper than mere speculation. It's a reflection of our shared human experience - those moments when reality and perception blur, when we question what we think we've heard. This project has tapped into something universal, creating not just a cryptocurrency but a cultural phenomenon. The community that has formed around this concept demonstrates the power of shared experience in the digital age. Whether you're a seasoned trader or someone who's never owned crypto before, the Hearing Things experience speaks to something fundamental about human nature and our relationship with technology.
              </Typography>
-           </Box>
+        </Box>
 
                      {/* Expanded Classified Section */}
            <Box sx={{ 
@@ -893,12 +976,12 @@ const HomePage = () => {
                textAlign: "center",
                fontSize: { xs: "1rem", md: "1.25rem" },
                backgroundColor: "black",
-               color: "white",
+          color: "white",
                py: 1
              }}>
                CLASSIFIED ADVERTISEMENTS
-             </Typography>
-             
+            </Typography>
+
              <Grid container spacing={{ xs: 1, md: 1.5 }}>
                <Grid item xs={12} sm={6} md={3}>
                  <Box sx={{ 
@@ -1061,7 +1144,7 @@ const HomePage = () => {
              <Box sx={{ mt: 2, pt: 2, borderTop: "1px solid #ccc" }}>
                <Typography 
                  variant="caption" 
-                 sx={{ 
+                sx={{
                    display: "block", 
                    textAlign: "center", 
                    fontFamily: "serif",
@@ -1073,7 +1156,7 @@ const HomePage = () => {
                </Typography>
                <Typography 
                  variant="caption" 
-                 sx={{ 
+                sx={{
                    display: "block", 
                    textAlign: "center", 
                    fontFamily: "serif",
@@ -1084,18 +1167,18 @@ const HomePage = () => {
                >
                  *Results not guaranteed. Past performance does not indicate future results. DYOR.
                </Typography>
-             </Box>
-           </Box>
+            </Box>
+          </Box>
 
            {/* CSS for animations */}
-           <style>
-             {`
+      <style>
+        {`
                @keyframes scroll {
                  0% { transform: translateX(100%); }
                  100% { transform: translateX(-100%); }
-               }
-             `}
-           </style>
+          }
+        `}
+      </style>
         </Paper>
       </Container>
     </Box>
