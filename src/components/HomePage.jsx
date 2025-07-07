@@ -38,59 +38,59 @@ const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   
   // Theme state
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
-  // Theme configuration
-  const theme = {
-    light: {
-      // Background colors
-      primary: "#fafafa",
-      secondary: "white",
-      paper: "white",
-      
-      // Text colors
-      primaryText: "#1a1a1a",
-      secondaryText: "#666",
-      
-      // Twitter-specific colors
-      twitterText: "#14171a",
-      twitterSecondary: "#657786",
-      twitterBorder: "#e1e8ed",
-      twitterHover: "#f7f9fa",
-      
-      // Accent colors
-      accent: "#1976d2",
-      accentHover: "#1565c0",
-      
-      // Border and divider
-      border: "#e0e0e0",
-      divider: "#e1e8ed"
-    },
-    dark: {
-      // Background colors
-      primary: "#15202b",
-      secondary: "#192734",
-      paper: "#192734",
-      
-      // Text colors
-      primaryText: "#ffffff",
-      secondaryText: "#8b98a5",
-      
-      // Twitter-specific colors (dark theme)
-      twitterText: "#ffffff",
-      twitterSecondary: "#8b98a5",
-      twitterBorder: "#38444d",
-      twitterHover: "#1e2732",
-      
-      // Accent colors
-      accent: "#1976d2",
-      accentHover: "#1565c0",
-      
-      // Border and divider
-      border: "#38444d",
-      divider: "#38444d"
-    }
-  };
+     // Theme configuration
+   const theme = {
+     light: {
+       // Background colors
+       primary: "#fafafa",
+       secondary: "white",
+       paper: "white",
+       
+       // Text colors
+       primaryText: "#1a1a1a",
+       secondaryText: "#666",
+       
+       // Twitter-specific colors
+       twitterText: "#14171a",
+       twitterSecondary: "#657786",
+       twitterBorder: "#e1e8ed",
+       twitterHover: "#f7f9fa",
+       
+       // Accent colors - Dark Yellow/Amber theme
+       accent: "#b8860b", // Dark goldenrod
+       accentHover: "#9a7209",
+       
+       // Border and divider
+       border: "#e0e0e0",
+       divider: "#e1e8ed"
+     },
+     dark: {
+       // Background colors - Dark Yellow/Amber theme
+       primary: "#2a1f0f", // Dark amber/brown
+       secondary: "#3d2b15", // Slightly lighter dark amber
+       paper: "#3d2b15",
+       
+       // Text colors
+       primaryText: "#f5e6d3", // Warm light cream
+       secondaryText: "#c4a876", // Muted gold
+       
+       // Twitter-specific colors (dark amber theme)
+       twitterText: "#f5e6d3",
+       twitterSecondary: "#c4a876",
+       twitterBorder: "#5a4429", // Dark amber border
+       twitterHover: "#4a3520", // Dark amber hover
+       
+       // Accent colors - Dark Yellow/Amber theme
+       accent: "#daa520", // Goldenrod - brighter for dark mode
+       accentHover: "#cd853f",
+       
+       // Border and divider
+       border: "#5a4429",
+       divider: "#5a4429"
+     }
+   };
 
   const currentTheme = isDarkMode ? theme.dark : theme.light;
 
@@ -559,7 +559,7 @@ const HomePage = () => {
                        sx={{ 
                          mt: 0.5,
                          height: "20px",
-                         backgroundColor: isDarkMode ? "#1e3a5f" : "#e3f2fd", 
+                         backgroundColor: isDarkMode ? "#4a3520" : "#fff8dc", 
                          color: currentTheme.accent,
                          fontSize: "0.7rem",
                          fontWeight: 600
@@ -815,7 +815,7 @@ const HomePage = () => {
       </Container>
 
              {/* Footer */}
-       <Box sx={{ backgroundColor: isDarkMode ? "#0d1117" : "#1a1a1a", color: "white", py: 6 }}>
+       <Box sx={{ backgroundColor: isDarkMode ? "#1f150a" : "#1a1a1a", color: "white", py: 6 }}>
          <Container maxWidth="lg">
            <Grid container spacing={4}>
              <Grid item xs={12} md={6}>
@@ -946,7 +946,7 @@ const HomePage = () => {
                        sx={{ 
                          mt: 0.5,
                          height: "20px",
-                         backgroundColor: isDarkMode ? "#1e3a5f" : "#e3f2fd", 
+                         backgroundColor: isDarkMode ? "#4a3520" : "#fff8dc", 
                          color: currentTheme.accent,
                          fontSize: "0.7rem",
                          fontWeight: 600
@@ -1037,7 +1037,7 @@ const HomePage = () => {
                      sx={{ 
                        color: currentTheme.twitterSecondary, 
                        textTransform: "none",
-                       "&:hover": { backgroundColor: isDarkMode ? "#1e3a5f" : "#e8f5fd", color: currentTheme.accent }
+                       "&:hover": { backgroundColor: isDarkMode ? "#4a3520" : "#fff8dc", color: currentTheme.accent }
                      }}
                    >
                      Reply
@@ -1057,7 +1057,7 @@ const HomePage = () => {
                      sx={{ 
                        color: currentTheme.twitterSecondary, 
                        textTransform: "none",
-                       "&:hover": { backgroundColor: isDarkMode ? "#1e3a5f" : "#e8f5fd", color: currentTheme.accent }
+                       "&:hover": { backgroundColor: isDarkMode ? "#4a3520" : "#fff8dc", color: currentTheme.accent }
                      }}
                    >
                      Share
