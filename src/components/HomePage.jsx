@@ -68,9 +68,9 @@ const HomePage = () => {
      },
      dark: {
        // Background colors - Dark Yellow/Amber theme
-       primary: "#2a1f0f", // Dark amber/brown
-       secondary: "#3d2b15", // Slightly lighter dark amber
-       paper: "#3d2b15",
+       primary: "#3d2b15", // Lighter dark amber/brown
+       secondary: "#4a3520", // Slightly lighter dark amber
+       paper: "#4a3520",
        
        // Text colors
        primaryText: "#f5e6d3", // Warm light cream
