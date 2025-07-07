@@ -497,7 +497,7 @@ const HomePage = () => {
              >
                Buy Now
              </Button>
-             <Button
+             {/* <Button
                variant="outlined"
                size="large"
                startIcon={<PlayArrow />}
@@ -517,31 +517,12 @@ const HomePage = () => {
                }}
              >
               Watch Video
-            </Button>
+            </Button> */}
           </Stack>
         </Box>
 
                  {/* News Ticker */}
-         <Box sx={{ mb: 8 }}>
-           <Paper elevation={0} sx={{ p: 2, backgroundColor: currentTheme.twitterHover, borderRadius: 2 }}>
-             <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-               <Chip label="LIVE" size="small" color="error" sx={{ fontWeight: 600 }} />
-               <Box sx={{ overflow: "hidden", flex: 1 }}>
-                 <Typography
-                   variant="body2"
-                   sx={{
-                     animation: "scroll 25s linear infinite",
-                     whiteSpace: "nowrap",
-                     color: currentTheme.secondaryText
-                   }}
-                 >
-                  {news.join(" • ")}
-                </Typography>
-              </Box>
-            </Box>
-          </Paper>
-        </Box>
-
+:
                  {/* Twitter-Style Posts */}
          <Box sx={{ mb: 8 }}>
            <Typography variant="h3" sx={{ mb: 1, fontWeight: 700, color: currentTheme.primaryText }}>
