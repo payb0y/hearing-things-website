@@ -342,10 +342,18 @@ const HomePage = () => {
                </Typography>
              </Box>
              <Stack direction="row" spacing={4} sx={{ display: { xs: "none", md: "flex" } }}>
-               <Typography variant="body1" sx={{ color: currentTheme.secondaryText, cursor: "pointer", "&:hover": { color: currentTheme.accent } }}>
+               <Typography 
+                 variant="body1" 
+                 onClick={() => window.open('https://letsbonk.fun/token/B8Gr2Mn4XVpw2BG3QBiaL9hUxUQ1kQW7kqv7KWrDbonk', '_blank')}
+                 sx={{ color: currentTheme.secondaryText, cursor: "pointer", "&:hover": { color: currentTheme.accent } }}
+               >
                  Markets
                </Typography>
-               <Typography variant="body1" sx={{ color: currentTheme.secondaryText, cursor: "pointer", "&:hover": { color: currentTheme.accent } }}>
+               <Typography 
+                 variant="body1" 
+                 onClick={() => window.open('https://x.com/i/communities/1943080045188202822', '_blank')}
+                 sx={{ color: currentTheme.secondaryText, cursor: "pointer", "&:hover": { color: currentTheme.accent } }}
+               >
                  Community
                </Typography>
                <Typography variant="body1" sx={{ color: currentTheme.secondaryText, cursor: "pointer", "&:hover": { color: currentTheme.accent } }}>
