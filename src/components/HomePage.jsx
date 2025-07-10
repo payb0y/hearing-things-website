@@ -776,7 +776,7 @@ const HomePage = () => {
         </Box>
 
                  {/* CTA Section */}
-         <Paper
+         {/* <Paper
            elevation={0}
            sx={{
              p: 6,
@@ -812,7 +812,7 @@ const HomePage = () => {
            >
              Get Started Now
            </Button>
-         </Paper>
+         </Paper> */}
 
                  {/* Quick Stats */}
          {/* <Grid container spacing={4} sx={{ mb: 8 }}>
