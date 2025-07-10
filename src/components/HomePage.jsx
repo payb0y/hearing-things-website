@@ -439,7 +439,7 @@ const HomePage = () => {
           <Paper
             elevation={0}
             onClick={() => {
-              const ca = "0x1234567890AbCdEf1234567890AbCdEf12345678";
+              const ca = "B8Gr2Mn4XVpw2BG3QBiaL9hUxUQ1kQW7kqv7KWrDbonk";
               navigator.clipboard.writeText(ca);
               // You can add a toast notification here if desired
             }}
