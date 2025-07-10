@@ -439,8 +439,7 @@ const HomePage = () => {
                fontWeight: 400
              }}
            >
-            Revolutionary memecoin that transforms auditory experiences into digital assets. 
-            Join thousands of holders in the next generation of cryptocurrency.
+            BIG IF TRUE !
           </Typography>
           
           {/* Contract Address */}
@@ -491,6 +490,7 @@ const HomePage = () => {
                          <Button
                variant="contained"
                size="large"
+               onClick={() => window.open('https://letsbonk.fun/token/B8Gr2Mn4XVpw2BG3QBiaL9hUxUQ1kQW7kqv7KWrDbonk', '_blank')}
                sx={{
                  backgroundColor: currentTheme.accent,
                  borderRadius: "12px",
