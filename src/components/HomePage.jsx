@@ -478,7 +478,7 @@ const HomePage = () => {
                 wordBreak: "break-all"
               }}
             >
-              0x1234567890AbCdEf1234567890AbCdEf12345678
+              B8Gr2Mn4XVpw2BG3QBiaL9hUxUQ1kQW7kqv7KWrDbonk
             </Typography>
           </Paper>
 
