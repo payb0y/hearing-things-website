@@ -356,11 +356,11 @@ const HomePage = () => {
                >
                  Community
                </Typography>
-               <Typography variant="body1" sx={{ color: currentTheme.secondaryText, cursor: "pointer", "&:hover": { color: currentTheme.accent } }}>
+               {/* <Typography variant="body1" sx={{ color: currentTheme.secondaryText, cursor: "pointer", "&:hover": { color: currentTheme.accent } }}>
                  About
-               </Typography>
+               </Typography> */}
              </Stack>
-             <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+             {/* <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}> */}
                {/* <IconButton
                  onClick={toggleTheme}
                  sx={{
@@ -372,7 +372,7 @@ const HomePage = () => {
                >
                  {isDarkMode ? <LightMode /> : <DarkMode />}
                </IconButton> */}
-               <Button
+               {/* <Button
                  variant="contained"
                  sx={{
                    backgroundColor: currentTheme.accent,
@@ -387,7 +387,7 @@ const HomePage = () => {
                >
                  Get Started
                </Button>
-             </Box>
+             </Box> */}
           </Toolbar>
         </Container>
       </AppBar>
